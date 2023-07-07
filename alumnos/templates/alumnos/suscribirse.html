@@ -1,0 +1,305 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUSCRIBIRSE | TALLER MECÁNICO RAPIDOS & FURIOSOS</title>
+
+    
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <!-- STYLES -->
+   
+    <!-- ICONS FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/73f851add2.js" crossorigin="anonymous"></script>
+    
+
+
+    <!-- Font Awesome -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+    />
+    <!-- MDB -->
+
+    <link rel="stylesheet" href="{% static 'css/carga.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/style-inicio.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style-formulario.css' %}" >
+
+    <style>
+      body {
+        background-image: url("{% static 'Imagenes/fondocontacto.png.jpg' %}");
+      }
+    </style>   
+        
+</head>
+<body >
+  <div id="contenedor_carga">
+    <div id="carga"></div>
+  </div>
+
+    <!--      AQUI VA EL MENU      -->
+<header>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <img src="{% static 'Imagenes/logooooo.png' %}" alt="Nombre de la compañia"  >
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item2">
+                    <a class="nav-link " aria-current="page" href="{% url 'Inicio' %}">INICIO</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="{% url 'servicios' %}">SERVICIOS</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'mecanicos' %}">MECÁNICOS</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'suscribirse' %}">SUSCRIBIRSE</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'promociones' %}">PROMOCIONES</a>
+              </li>
+
+
+                <li class="nav-item">
+                  <a class="nav-link " aria-current="page" href="{% url 'Inicio' %}" >SOBRE NOSOTROS</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
+              <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+</header>
+
+<!-- MAIN -->
+<main style="background-color: rgba(226, 226, 226,0.9);">
+    <!-- FORMULARIO -->
+    <form action="#" class="formulario" id="formulario">
+        <!-- GRUPO DE USUARIO -->
+        <div class="formulario__grupo" id="grupo__usuario">
+            <label class="formulario__label">Nombre de usuario</label>
+            <div class="formulario__grupo-input">
+                <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="nombre_usuario">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">El usuario debe tener minimo 4 caracteres y solo se admiten números, letras y guión bajo.</p>
+        </div>
+
+        
+        <!-- GRUPO DE NOMBRE-->
+        <div class="formulario__grupo" id="grupo__nombre">
+            <label class="formulario__label">Nombre y Apellido</label>
+            <div class="formulario__grupo-input">
+                <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Nombre y Apellido">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">El nombre debe tener minimo 4 caracteres y solo se admiten números, letras y guión bajo.</p>
+        </div>
+
+
+        <!-- GRUPO DE CONTRASEÑA 1-->
+        <div class="formulario__grupo" id="grupo__password">
+            <label class="formulario__label">Contraseña</label>
+            <div class="formulario__grupo-input">
+                <input type="password" class="formulario__input" name="password" id="password" placeholder="*********">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">La contraseña debe ser de 4 a 12 digitos</p>
+        </div>
+
+
+        <!-- GRUPO DE CONTRASEÑA 2-->
+        <div class="formulario__grupo" id="grupo__password2">
+            <label class="formulario__label">Repetir la contraseña</label>
+            <div class="formulario__grupo-input">
+                <input type="password" class="formulario__input" name="password2" id="password2" placeholder="*********">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">La contraseña no coincide</p>
+        </div>
+
+
+        <!-- GRUPO DE EMAIL -->
+        <div class="formulario__grupo" id="grupo__correo">
+            <label class="formulario__label">Correo Electonico</label>
+            <div class="formulario__grupo-input">
+                <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@mail.com">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">El correo debe tener mÍnimo 4 caracteres y sólo se admiten números, letras y guión bajo.</p>
+        </div>
+
+
+        <!-- GRUPO DE TELÉFONO -->
+        <div class="formulario__grupo" id="grupo__telefono">
+            <label class="formulario__label">Teléfono</label>
+            <div class="formulario__grupo-input">
+                <input type="telefono" class="formulario__input" name="telefono" id="telefono" placeholder="+56912345678">
+                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>
+            <p class="formulario__input-error">El número debe tener 10 digitos</p>
+        </div>
+
+
+        <!-- GRUPO TERMINOS Y CONDICIONES -->
+        <div class="formulario__grupo formulario__grupo-terminos" id="grupo__terminos">
+            <label class="formulario__label">
+                <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+                <b class="formulario__span">Acepto los terminos y condiciones</b>
+            </label>
+        </div>
+        
+        <!-- MENSAJE DE CAMPOS REQUERIDOS -->
+        <div class="formulario__mensaje" id="formulario__mensaje">
+            <p><i class="fas fa-exclamation-circle"> <b>Error:</b> Debes completar todos los campos</i></p>
+        </div>
+
+
+        <!-- GRUPO ENVIAR -->
+
+        <div class="formulario__grupo formulario__grupo-btn-enviar">
+          <p class="formulario__mensaje-exito" id="formulario__mensaje-exito" >El formulario se envió correctamente   ✔</p>
+          <input class="btn btn-secondary" id="boton-enviar" type="submit" value="Enviar" >
+
+           <!-- MODAL SALIR -->
+
+          <button type="button" class="btn btn-secondary" id="boton-salir" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
+       Salir
+     </button>
+
+     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" 
+     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+       <div class="modal-dialog">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h1 class="modal-title fs-5" id="staticBackdropLabel" style="color: #000;">¿Estas seguro que deseas salir?</h1>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+           <div class="modal-body" style="color: #000;">
+             Al salir perderas muchas promociones que tenemos para ti !
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+             <a class="btn btn-secondary" href="Inicio.html" role="button"> Salir</a>
+             
+           </div>
+         </div>
+       </div>
+     </div>
+      </div>
+
+    
+
+    </form>
+</main>
+
+    <script src="{% static 'js/formulario.js' %}" ></script>
+
+               <!-- AQUI EMPEIZA EL FOOTER -->
+   
+   <footer class="bg-light text-center text-white" id="footer" style="margin-top: 200px;">
+    <!-- Grid container -->
+    <div class="container p-2 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-2">
+        <!-- Facebook -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #3b5998;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+  
+        <!-- Twitter -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #55acee;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-twitter"></i
+        ></a>
+  
+        <!-- Google -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #dd4b39;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-google"></i
+        ></a>
+  
+        <!-- Instagram -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #ac2bac;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-instagram"></i
+        ></a>
+  
+        <!-- Linkedin -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #0082ca;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <!-- Github -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #333333;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-github"></i
+        ></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.5);">
+      © 2023 Copyright TALLER MECÁNICO RAPIDOS & FURIOSOS
+      
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+  <script src="{% static 'js/promociones.js' %}" ></script>
+<script>
+  window.onload = function(){
+    var contenedor = document.getElementById('contenedor_carga')
+    contenedor.style.visibility='hidden';
+    contenedor.style.opacity = 0;
+  }
+</script>
+   
+    
+</body>
+</html>

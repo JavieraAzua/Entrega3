@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100&display=swap');
+
+body{
+    font-size: 'Poppins';
+    
+}
+
+
+
+/*.encabezado-img{
+    position: relative;
+    display: inline-flex;
+}
+
+
+.texto{
+    align-content: center;
+    top: 10px;
+}
+*/
+.encabezado-img{
+    margin-block-start: 115px;
+    width: 1462px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right,rgb(0 0 0 / .5),rgb(0 0 0 / .5));
+    background-size: cover;
+    object-fit: cover;
+    
+   
+}
+
+.texto{
+    color: white;
+    text-align: center;
+    font-size: 70px;
+	line-height: 70px;
+	font-weight: bold;
+    
+
+}
+
+
+
+.col-3{
+    margin-top: 4rem;
+    padding-top: 2rem;   
+}
+
+.col-3 span{
+  
+    border-radius: 100% 100% 100% 100%;
+    overflow: hidden;
+    padding-top: 50px!important;
+    padding-right: 30px!important;
+    padding-bottom: 50px!important;
+    padding-left: 30px!important;
+    background-color: rgba(154, 205, 50, 0.8);
+   
+    
+}
+
+.col-3 span :hover{
+
+
+  transform:translateY(-3%)
+}
+
+.col-12 h1{
+    margin-top: 6rem;
+    line-height: 50px;
+    border-bottom: #239089 solid 2px;
+    margin-block-start: 50px;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
+.col-12 .h1 .ul{
+    color: #3d3c3c;
+	font-size: 17px;
+    text-align: center;
+}
+
+
+.col-3 h4{
+    margin-top: 2rem;
+    padding-bottom: 20px;
+    font-size: 25px;
+}
+
+
+#contacto{
+    border-radius: 10px;
+    cursor: pointer;
+    width: 400px;
+    height: 50px ;
+    margin-top: 100px;
+    margin-left: 550px;
+    font-size: 1.5em;
+
+}
+
+.centrado{
+    text-align: center;
+    vertical-align: middle;
+}

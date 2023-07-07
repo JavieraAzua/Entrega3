@@ -1,0 +1,33 @@
+{% extends "./base.html" %}
+
+{% block title %} Gestion de Clientes {% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <h2 style="padding: 20px;">Edición de Clientes</h2>
+            <div class="card">
+                <div class="card-body">
+                    <form action="/editar/" method="POST"> {% csrf_token %}  <!--nos protege de daños de otros usuarios -->
+                        <div class="form-group">
+                            <input type="text" name="rut" value="{{cliente.rut}}" class="form-control" placeholder="Rut" minlength="8" maxlength="10" readonly required style="padding: 7px; margin-bottom: 15px;"> 
+                        </div>
+                        <div class="form-group">
+                            <input type="text"  name="nombre" value="{{cliente.nombre}}" class="form-control" placeholder="Nombre"  maxlength="50" required style="padding: 7px; margin-bottom: 15px;">
+                        </div>
+                        <div class="form-group">    
+                            <input type="text"  name="apellido_paterno" value="{{cliente.apellido_paterno}}" class="form-control" placeholder="Apellido Paterno"  maxlength="50" required style="padding: 7px; margin-bottom: 15px;">
+                        </div>
+                        <div class="form-group">    
+                            <input type="text"  name="apellido_materno" value="{{cliente.apellido_materno}}" class="form-control" placeholder="Apellido Materno"  maxlength="50" required style="padding: 7px; margin-bottom: 50px;">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success btn-block text-white" style="margin-left: 70px; padding-left: 100px; padding-right: 100px;">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+    </div>
+</div>
+{% endblock %}

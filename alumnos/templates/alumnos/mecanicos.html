@@ -1,0 +1,364 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MECÁNICOS | TALLER MECÁNICO RAPIDOS & FURIOSOS</title>
+    <style type="text/css">
+        .product-small-img img{
+            width: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            padding: 8px;
+            margin: 10px 10px 15px;
+            cursor: pointer; 
+            
+        }
+
+        .product-small-img img :hover{
+            transform: translateY(-10%);
+
+        }
+
+        .product-small-img{
+            width: 15%;
+            display: flex;
+            margin-left: 400px;
+            margin-top: 10px;
+
+        }
+
+        .img-container img{
+            height: 360px;
+            margin-top: 15px;
+        }
+
+      
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Asap+Condensed:ital@1&display=swap');
+      </style>
+  
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+
+    <!-- Font Awesome -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/carga.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style-mecanicos.css' %}" >
+
+  
+   
+    
+
+
+</head>
+<body>
+  
+    <div id="contenedor_carga">
+        <div id="carga"></div>
+      </div>
+
+    <!--      AQUI VA EL MENU      -->
+
+<header>
+
+    <nav class="navbar navbar-expand-lg fixed-top" >
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <img src="{% static 'Imagenes/logooooo.png' %}" alt="Nombre de la compañia"  >
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item2">
+                    <a class="nav-link " aria-current="page" href="{% url 'Inicio' %}" >INICIO</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="{% url 'servicios' %}">SERVICIOS</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'mecanicos' %}">MECÁNICOS</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'suscribirse' %}">SUSCRIBIRSE</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'promociones' %}">PROMOCIONES</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link " aria-current="page" href="{% url 'Inicio' %}" >SOBRE NOSOTROS</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="Buscar" placeholder="Buscar" aria-label="Buscar">
+              <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+
+</header>
+
+
+
+            <!---------- FOTOS MECANICOS ----------------->
+
+            <div class="container" >
+                <div class="card">
+                    <figure>
+                        <img src="{% static 'Imagenes/mecanico1.png' %}"  alt="">
+                    </figure>
+                    <div class="contenido">
+                        <h3 style="color: black ; ">Juan Alfaro</h3>
+                        <p style="font-weight: bold;">ESPECIALISTA EN ELECTRÓNICA AUTOMOTRIZ</p>
+                        <p>Su función se basa en detectar fallos, servicio y mantenimiento o reparación de todos
+                             los elementos del circuito eléctrico de carga, arranque, luces y accesorios del vehículo.</p>
+                        <a href="#mecanico-1">Ver Trabajos</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="{% static 'Imagenes/mecanico3.png' %}"  alt="">
+                    </figure>
+                    <div class="contenido">
+                        <h3>Samuel López</h3>
+                        <p style="font-weight: bold;">ESPECIALISTA EN CAJAS DE CAMBIO</p>
+                        <p>Su función se basa en la reparación de cajas de cambios automáticas y mecánicas
+                             con el mas estricto apego a las normas que cada fabricante impone a su Servicio Técnico. </p>
+                        <a href="#mecanico-2">Ver trabajos</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <figure>
+                        <img src="{% static 'Imagenes/mecanico2.png' %}"   alt="">
+                    </figure>
+                    <div class="contenido">
+                        <h3>Dylan González</h3>
+                        <p style="font-weight: bold;">ESPECIALISTA EN SUSPENSIÓN Y DIRECCIÓN</p>
+                        <p>Su función se basa en diagnosticar fallas y reparar los sistemas de suspensión y de dirección, 
+                            con todos sus componentes.</p>
+                        <a href="#mecanico-3">Ver Trabajos</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!---------- TRABAJOS MECANICOS  -----------------> 
+             
+        <section class="mecanico" id="mecanico-1" >
+            <div class="product" style="margin-left: 3em;  ">
+                <div>
+                    <h2 >Cambio de Batería</h2>
+                </div>
+                
+                <div class="img-container" style="display: flex; ">
+                    <img src="{% static 'Imagenes/bateria_coche.png' %}"    alt="">
+                    <p>
+                        <strong>Diagnóstico:</strong> <br>
+                    La batería no era capaz de entregar la energía suficiente para hacer partir el vehículo, 
+                    se descartó que fuera el alternador ya que se probó sacando la batería y el auto seguía encendido. 
+                    Además estaba el factor que la batería tenía más de 5 años de uso. <br><br>
+                    <strong>Materiales:</strong> <br>- Bateria nueva<br>
+                    - Llave 10mm<br>
+                    - Llave 12mm
+
+                    <br><br>
+                    <strong>Fecha:</strong> 16-04-2023&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<strong>Mecánico:</strong> Juan Alfaro.
+
+                  
+                  </p>
+                    
+
+                </div>
+
+                <div class="product-small-img" style="display: flex; margin-right: 10px;">
+                    <img src="{% static 'Imagenes/electronicaapng.jpg' %}"   alt="">
+                    <img src="{% static 'Imagenes/electronica2.png' %}"  alt="">
+                    <img src="{% static 'Imagenes/electronica3.png' %}"  alt="">
+                    <div class="boton">
+                        <a class="btn btn-secundary"  href="{% url 'mecanicos' %}" role="button">Volver arriba</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="mecanico" id="mecanico-2"> 
+            <div class="product" style="margin-left: 3em;">
+                <div>
+                    <h2>Mantenimiento de Caja de Cambio Automática</h2>
+                </div>
+                <div class="img-container" style="display: flex;">
+                    <img src="{% static 'Imagenes/caja_cambios.png' %}"  alt="">
+                    <p>
+                        <strong>Diagnóstico:</strong> <br>
+                        Mantención preventiva a la caja de cambios automática ya que se encontraba
+                         en un kilometraje ideal para hacer un cambio de aceite de la caja. 
+                         Se recomienda hacer este tipo de cambio cada 60.000km o bien 
+                         una vez al año revisar como se va comportando este ya que el aceite 
+                         se puede degradar por condiciones de manejo o por sobrecalentamiento. 
+                        <br><br>
+                    <strong>Materiales:</strong> <br>- Aceite de transmisión (ATF)<br>
+                    - Llave 14mm <br>
+                    - Depósito para aceite usado              
+                    <br><br>
+                    <strong>Fecha:</strong> 16-04-2023&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<strong>Mecánico:</strong> Samuel López.
+
+                  
+                  </p>
+                </div>
+    
+                <div class="product-small-img">
+                    <img src="{% static 'Imagenes/cajamecanica.png' %}"  alt="">
+                    <img src="{% static 'Imagenes/cajascambio2.png' %}"  alt="">
+                    <img src="{% static 'Imagenes/cajascambio3.png' %}"  alt="">
+                    <div class="boton">
+                        <a class="btn btn-secundary"  href="{% url 'mecanicos' %}" role="button">Volver arriba</a>
+                    </div>
+                </div> 
+            </div>
+        </section>
+
+        <section class="mecanico" id="mecanico-3"> 
+            <div class="product" style="margin-left: 3em;">
+                <div>
+                    <h2 >Cambio de Amortiguadores</h2>
+                </div>
+                <div class="img-container" style="display: flex;">
+                    <img src="{% static 'Imagenes/amortiguadores.png' %}"  alt="">
+                    <p>
+                        <strong>Diagnóstico:</strong> <br>
+                        Se realizó una prueba en ruta y se notaba que la distancia de frenado 
+                        aumentaba más de lo normal, también  se pudo notar que el volante tenía más 
+                        vibraciones y finalmente el eje delantero se hundía al acelerar. 
+                        Se cambiaron los amortiguadores por todas estas razones y así evitar mayores daños 
+                        como el desgaste de los neumáticos de manera irregular y una amortiguación nula.
+                        <br><br>
+                    <strong>Materiales:</strong> <br>
+                    - Gata hidráulica &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp - Amortiguadores nuevos<br>
+                    - Soportes de gata &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp - Destornilladores <br>
+                    - Compresor de muelles &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp - Llave cruz e inglesa <br>
+                    - Llaves 10, 14, 16 mm 
+                    
+                    
+
+                    <br><br>
+                    <strong>Fecha:</strong> 16-04-2023&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<strong>Mecánico:</strong> Dylan González.
+
+                  
+                  </p>
+                </div>
+    
+                <div class="product-small-img"  >
+                    <img src="{% static 'Imagenes/suspension5.png' %}" alt="" >
+                    <img src="{% static 'Imagenes/suspension2.png' %}"  alt="">
+                    <img src="{% static 'Imagenes/suspension3.png' %}"  alt="">
+                    <div class="boton">
+                        <a class="btn btn-secundary"  href="{% url 'mecanicos' %}" role="button">Volver arriba</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+            <!---------- FOOTER ----------------->
+
+<footer class="bg-light text-center text-white" id="footer" >
+    <!-- Grid container -->
+    <div class="container p-2 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-2" style="margin-left: 500px; margin-bottom: 10px;">
+        <!-- Facebook -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #3b5998;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+  
+        <!-- Twitter -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #55acee;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-twitter"></i
+        ></a>
+  
+        <!-- Google -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #dd4b39;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-google"></i
+        ></a>
+  
+        <!-- Instagram -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #ac2bac;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-instagram"></i
+        ></a>
+  
+        <!-- Linkedin -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #0082ca;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <!-- Github -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #333333;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-github"></i
+        ></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.5);">
+      © 2023 Copyright TALLER MECÁNICO RAPIDOS & FURIOSOS
+      
+    </div>
+    <!-- Copyright -->
+  </footer>
+   
+
+  <script>
+    window.onload = function(){
+      var contenedor = document.getElementById('contenedor_carga')
+      contenedor.style.visibility='hidden';
+      contenedor.style.opacity = 0;
+    }
+  </script>
+
+</body>
+</html>
