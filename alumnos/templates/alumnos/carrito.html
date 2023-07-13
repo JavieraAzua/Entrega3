@@ -1,0 +1,58 @@
+<div class="alert alert-primary" role="alert">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="row" colspan="3" class="text-center">PRODUCTOS</th>
+            </tr>
+            <tr>
+                <th scope="col" style="font-size: large;">CODIGO</th>
+                <th scope="col" style="font-size: large;">PRECIO</th>
+                <th scope="col" style="font-size: large;">CANTIDAD</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% if request.session.carrito.items %}
+                {% for key, value in request.session.carrito.items %}
+                    <tr>
+                        <td style="font-size: large;">#{{ value.codigo }}</td>
+                        <td style="font-size: large;">{{ value.precio }}</td>
+                        <td style="font-size: large;">{{ value.cantidad }}
+                            <a href="{% url 'agregar_producto' value.codigo %}" class="badge btn-dark badge-dark" style="margin-right: 5px; margin-left: 5px;">+</a>
+                            <a href="{% url 'restar_producto' value.codigo %}" class="badge btn-dark badge-dark">-</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="3">
+                        <div class="alert alert-danger text-center" style="font-size: large; padding: 10px;">Sin productos</div>
+                    </td>
+                </tr>
+            {% endif %}
+            <tr>
+                <th scope="row" style="font-size: large;">Total:</th>
+                <td colspan="2" style="font-size: large;">$ {{ carrito.calcular_total }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+</div>
+
+<div class="row text-center">
+    <div class="col-6">
+        {% if request.session.carrito.items %}
+            <a href="{% url 'limpiar_producto' %}" class="btn btn-danger">Limpiar</a>
+        {% else %}
+            <button class="btn btn-danger" disabled>Limpiar</button>
+        {% endif %}
+    </div>
+    
+    <div class="col-6">
+        {% if request.session.carrito.items %}
+            <a href="{% url 'generarBoleta' %}" class="btn btn-danger">Comprar</a>
+        {% else %}
+            <button class="btn btn-danger" disabled>Comprar</button>
+        {% endif %}
+    </div>
+</div>

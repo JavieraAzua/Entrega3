@@ -15,12 +15,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
-
+from django.conf import settings
+from django.conf.urls.static import static
+from alumnos.models import detalle_boleta
+from alumnos.views import agregar_producto, detallecarrito, elimina_producto, generarBoleta, limpiar_producto, restar_producto
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('alumnos.urls')),
+    path('', include('alumnos.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-    
+    path('agregar/<str:codigo>/', agregar_producto, name='agregar_producto'),
+    path('eliminar/<str:codigo>/', elimina_producto, name="elimina_producto"),
+    path('restar/<str:codigo>/', restar_producto, name="restar_producto"),
+    path('limpiar/', limpiar_producto, name='limpiar_producto'),
+    path('detalle_boleta/', detalle_boleta, name='detalle_boleta'), 
+    path('generarBoleta/', generarBoleta, name='generarBoleta'), 
+    path('detallecarrito', detallecarrito, name='detallecarrito'), 
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

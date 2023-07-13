@@ -16,6 +16,14 @@ urlpatterns = [
     path('eliminar/<rut>', views.eliminar, name='eliminar'),  
     path('home', views.home, name='home'),
     path('logout/', views.exit, name='exit'),
+    path('tienda/', views.tienda, name='tienda'), 
+    path('generarBoleta/', views.generarBoleta, name='generarBoleta'),   
+    path('agregar/<str:codigo>/', views.agregar_producto, name='agregar_producto'),
+    path('eliminar/<str:codigo>/', views.elimina_producto, name="elimina_producto"),
+    path('restar/<str:codigo>/', views.restar_producto, name="restar_producto"),
+    path('limpiar/', views.limpiar_producto, name='limpiar_producto'),
+    
+    
     
 ]
 

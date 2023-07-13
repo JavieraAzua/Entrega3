@@ -1,0 +1,45 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block title %} Gestion de Clientes {% endblock %}
+{% block body %}
+
+<body style="background-color: aliceblue; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" >
+    <div class="container" style="flex-direction: row  row-reverse  column  column-reverse;">
+        <div class="row">
+            <div class="col-12-align-self-center">
+                <h1 class="display-1" style="background: #deedfa; color: rgb(84, 84, 84); padding-left: 400px; margin-bottom: 40px;" >TIENDA </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <div class="row" style="padding: 10px 0; color: aliceblue; font-size:x-large;">
+                    <div class="col-12">
+                        <div class="row">
+                            {% for producto in productos %}
+                            <div class="col-6">
+                                <div class="card" style="height: 19rem; width: 21rem; margin: 5px 0px; box-shadow: 0px 0px 3px #848484;  background-color: rgba(59, 70, 82, 0.7);
+                                 border: none; border-radius: 5%;" >
+                                    <div class="card-body">
+                                        <div class="card-text-container" style="display: flex; align-items: center;">
+                                            <h5 class="card-title" style="color: beige; opacity: 1; margin-bottom: 20px;">{{ producto.nombre_producto }}</h5>
+                                            <p class="card-text" style="color: beige; margin-bottom: 20px; margin-left: 100px;">#{{ producto.codigo }}</p>
+                                        </div>
+                                        <img src="{{ producto.imagen.url }}" alt="imagen" style="width: 150px; height: 100px; margin-bottom: 10px;">
+                                        <p class="card-text" style="color: beige;">${{ producto.precio }}</p>
+                                        <a href="{% url 'agregar_producto' producto.codigo %}" class="btn btn-primary">Agregar producto</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>     
+                </div>
+            </div>
+            <div class="col-4 " style=" color: aliceblue; font-size:x-large">
+                {% include "alumnos/carrito.html" %}
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}
